@@ -13,6 +13,8 @@
 		0D89A09124DEFAAA00D09988 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D89A09024DEFAAA00D09988 /* Assets.xcassets */; };
 		0D89A09424DEFAAA00D09988 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D89A09324DEFAAA00D09988 /* Preview Assets.xcassets */; };
 		0D89A09724DEFAAA00D09988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D89A09524DEFAAA00D09988 /* LaunchScreen.storyboard */; };
+		0D89A09F24E005B800D09988 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A09E24E005B800D09988 /* Game.swift */; };
+		0D89A0A124E0060700D09988 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A0A024E0060700D09988 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		0D89A09324DEFAAA00D09988 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		0D89A09624DEFAAA00D09988 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D89A09824DEFAAA00D09988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0D89A09E24E005B800D09988 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		0D89A0A024E0060700D09988 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +67,8 @@
 				0D89A09524DEFAAA00D09988 /* LaunchScreen.storyboard */,
 				0D89A09824DEFAAA00D09988 /* Info.plist */,
 				0D89A09224DEFAAA00D09988 /* Preview Content */,
+				0D89A09E24E005B800D09988 /* Game.swift */,
+				0D89A0A024E0060700D09988 /* Settings.swift */,
 			);
 			path = MathForKids;
 			sourceTree = "<group>";
@@ -149,6 +155,8 @@
 				0D89A08B24DEFAA500D09988 /* AppDelegate.swift in Sources */,
 				0D89A08D24DEFAA500D09988 /* SceneDelegate.swift in Sources */,
 				0D89A08F24DEFAA500D09988 /* ContentView.swift in Sources */,
+				0D89A09F24E005B800D09988 /* Game.swift in Sources */,
+				0D89A0A124E0060700D09988 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

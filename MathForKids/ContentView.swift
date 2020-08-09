@@ -26,16 +26,11 @@ struct ContentView: View {
                     .padding(.bottom, 40)
                 
                 if isPlaying {
-                    
+                    // While playing
+                    Game()
                 } else {
-                    Stepper(value: $maxRange, in: 2...12) {
-                        Text("Range of numbers: \(self.maxRange)")
-                    }
-                        .padding(.horizontal)
-                    Stepper(value: $numOfQuestions, in: 4...30) {
-                        Text("Number of questions: \(self.numOfQuestions)")
-                    }
-                        .padding(.horizontal)
+                    // While showing settings screen
+                    Settings(maxRange: $maxRange, numOfQuestions: $numOfQuestions)
                 }
                 Spacer()
                 
