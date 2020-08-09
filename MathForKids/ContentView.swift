@@ -14,6 +14,8 @@ struct ContentView: View {
     @State private var numOfQuestions = 5
     @State private var isPlaying = false
     
+    @State private var questions:[Question] = []
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -49,6 +51,23 @@ struct ContentView: View {
             .navigationBarTitle("MathForKids", displayMode: .inline)
         }
     }
+    
+    func generateQuestions() {
+        
+    }
+}
+
+enum QuestionType {
+    case addition
+    case substruction
+    case multiplication
+    case division
+}
+
+struct Question {
+    var type: QuestionType
+    var firstNumber: Int
+    var secondNumber: Int
 }
 
 struct ContentView_Previews: PreviewProvider {
