@@ -34,7 +34,7 @@ struct ContentView: View {
                 }
                 Spacer()
                 
-                Button(isPlaying ? "Submit" : "Start") {
+                Button(isPlaying ? "Submit" : "Let's go!") {
                     self.isPlaying = true
                 }
                     .font(.system(size: 24, weight: .bold))
