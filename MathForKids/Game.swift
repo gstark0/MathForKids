@@ -16,6 +16,8 @@ struct Game: View {
     
     var questions: [Question] = []
     @State private var currIndex = 0
+    @State private var correctAnswers = 0
+    @State private var incorrectAnswers = 0
     
     var body: some View {
         // On every TextField change, check if answer is integer and enable submit button if it is
@@ -41,13 +43,13 @@ struct Game: View {
                             .background(Color("Background"))
                             .foregroundColor(Color(red: 158 / 255, green: 183 / 255, blue: 167 / 255))
                             .cornerRadius(5)
-                        Text("5 good")
+                        Text("\(correctAnswers) good")
                             .padding(10)
                             .font(.system(size: 18, weight: .bold))
                             .background(Color("Basic"))
                             .foregroundColor(.white)
                             .cornerRadius(5)
-                        Text("1 wrong")
+                        Text("\(incorrectAnswers) wrong")
                             .padding(10)
                             .font(.system(size: 18, weight: .bold))
                             .background(Color(red: 233 / 255, green: 118 / 255, blue: 111 / 255))
