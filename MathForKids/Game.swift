@@ -15,11 +15,16 @@ struct Game: View {
     @State private var canSubmit = false
     
     var body: some View {
+        // On every TextField change, check if answer is integer and enable submit button if it is
         let binding = Binding<String>(get: {
             self.answer
         }, set: {
             self.answer = $0
-            print(self.answer)
+            if Int(self.answer) != nil {
+                self.canSubmit = true
+            } else {
+                self.canSubmit = false
+            }
         })
         
         return ZStack {
@@ -64,7 +69,7 @@ struct Game: View {
                         .border(Color(red: 236 / 255, green: 244 / 255, blue: 239 / 255), width: 1)
                         // TODO add shadow
                     Spacer()
-                    BottomButton(text: "Submit", disabled: canSubmit, onPress: {
+                    BottomButton(text: "Submit", disabled: !canSubmit, onPress: {
                         
                     })
                 }
