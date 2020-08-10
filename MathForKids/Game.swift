@@ -15,15 +15,17 @@ struct Game: View {
     
     var body: some View {
         ZStack {
+            /*
             VStack {
                 Spacer()
                     .edgesIgnoringSafeArea(.all)
                 Color("Background")
                     .frame(height: 520)
                     .edgesIgnoringSafeArea(.all)
-            }
+            }*/
             VStack {
-                Spacer()
+                
+                
                 Text("3+4=?")
                     .font(.system(size: 52, weight: .bold))
                     .foregroundColor(Color.init("DarkText"))
