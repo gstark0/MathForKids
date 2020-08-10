@@ -15,6 +15,8 @@
 		0D89A09724DEFAAA00D09988 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D89A09524DEFAAA00D09988 /* LaunchScreen.storyboard */; };
 		0D89A09F24E005B800D09988 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A09E24E005B800D09988 /* Game.swift */; };
 		0D89A0A124E0060700D09988 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A0A024E0060700D09988 /* Settings.swift */; };
+		0D89A0A324E086FF00D09988 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A0A224E086FF00D09988 /* ProgressBar.swift */; };
+		0D89A0A524E131B100D09988 /* BottomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D89A0A424E131B100D09988 /* BottomButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		0D89A09824DEFAAA00D09988 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0D89A09E24E005B800D09988 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		0D89A0A024E0060700D09988 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		0D89A0A224E086FF00D09988 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		0D89A0A424E131B100D09988 /* BottomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +73,8 @@
 				0D89A09224DEFAAA00D09988 /* Preview Content */,
 				0D89A09E24E005B800D09988 /* Game.swift */,
 				0D89A0A024E0060700D09988 /* Settings.swift */,
+				0D89A0A224E086FF00D09988 /* ProgressBar.swift */,
+				0D89A0A424E131B100D09988 /* BottomButton.swift */,
 			);
 			path = MathForKids;
 			sourceTree = "<group>";
@@ -156,6 +162,8 @@
 				0D89A08D24DEFAA500D09988 /* SceneDelegate.swift in Sources */,
 				0D89A08F24DEFAA500D09988 /* ContentView.swift in Sources */,
 				0D89A09F24E005B800D09988 /* Game.swift in Sources */,
+				0D89A0A324E086FF00D09988 /* ProgressBar.swift in Sources */,
+				0D89A0A524E131B100D09988 /* BottomButton.swift in Sources */,
 				0D89A0A124E0060700D09988 /* Settings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -18,60 +18,16 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer()
-                Image("pig")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 110)
-                    .shadow(color: Color.init(red: 0, green: 0, blue: 0, opacity: 0.06), radius: 0, x: 0, y: 8)
-                    .padding(.bottom, 40)
-                
-                if isPlaying {
-                    // While playing
-                    Game()
-                } else {
-                    // While showing settings screen
-                    Settings(maxRange: $maxRange, numOfQuestions: $numOfQuestions)
-                }
-                Spacer()
-                
-                Button(isPlaying ? "Submit" : "Let's go!") {
-                    self.isPlaying = true
-                }
-                    .font(.system(size: 24, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color.init("Basic"))
-                    .cornerRadius(5)
-                    .padding(.horizontal)
-                    .padding(.bottom, 30)
+            if isPlaying {
+                // While playing
+                Game()
+                    .navigationBarTitle("MathForKids", displayMode: .inline)
+            } else {
+                // While showing settings screen
+                Settings(maxRange: $maxRange, numOfQuestions: $numOfQuestions, questions: $questions, isPlaying: $isPlaying)
+                    .navigationBarTitle("MathForKids", displayMode: .inline)
             }
-            .navigationBarTitle("MathForKids", displayMode: .inline)
         }
     }
-    
-    func generateQuestions() {
-        
-    }
 }
 
-enum QuestionType {
-    case addition
-    case substruction
-    case multiplication
-    case division
-}
-
-struct Question {
-    var type: QuestionType
-    var firstNumber: Int
-    var secondNumber: Int
-}
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
