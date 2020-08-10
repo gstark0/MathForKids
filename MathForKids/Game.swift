@@ -25,7 +25,7 @@ struct Game: View {
             }*/
             VStack {
                 
-                
+                Spacer()
                 Text("3+4=?")
                     .font(.system(size: 52, weight: .bold))
                     .foregroundColor(Color.init("DarkText"))
