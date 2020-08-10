@@ -82,6 +82,7 @@ struct Game: View {
                             // If the answer is NOT correct
                             self.incorrectAnswers += 1
                         }
+                        self.canSubmit = false
                         self.answer = ""
                         self.currIndex += 1
                     })
