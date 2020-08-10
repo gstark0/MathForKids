@@ -92,7 +92,7 @@ struct Game: View {
             
             
             GeometryReader { geometry in
-                ProgressBar(progressValue: self.$progressValue)
+                ProgressBar(progressValue: Double(self.currIndex+1)/Double(self.questions.count))
                     .padding(.horizontal)
                     .position(x: geometry.size.width * 0.5, y: 40)
             }
