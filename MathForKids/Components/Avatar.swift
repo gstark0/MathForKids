@@ -15,7 +15,7 @@ struct Avatar: View {
         Image(avatar)
             .resizable()
             .scaledToFit()
-            .frame(width: 110)
+            .frame(width: 120)
             .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.06), radius: 0, x: 0, y: 8)
     }
 }
