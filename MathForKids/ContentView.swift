@@ -20,7 +20,7 @@ struct ContentView: View {
         NavigationView {
             if isPlaying {
                 // While playing
-                Game()
+                Game(questions: questions)
                     .navigationBarTitle("MathForKids", displayMode: .inline)
             } else {
                 // While showing settings screen

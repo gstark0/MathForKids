@@ -14,6 +14,9 @@ struct Game: View {
     @State private var progressValue = 0.3
     @State private var canSubmit = false
     
+    var questions: [Question] = []
+    @State private var currIndex = 0
+    
     var body: some View {
         // On every TextField change, check if answer is integer and enable submit button if it is
         let binding = Binding<String>(get: {
@@ -32,7 +35,7 @@ struct Game: View {
                 HStack(spacing: 30) {
                     Avatar(avatar: "pig")
                     VStack(alignment: .trailing, spacing: 7) {
-                        Text("7/10")
+                        Text("\(currIndex+1)/\(questions.count)")
                             .padding(10)
                             .font(.system(size: 18, weight: .bold))
                             .background(Color("Background"))
@@ -55,7 +58,7 @@ struct Game: View {
                     .padding(.top, 80)
                     .padding(.bottom, 30)
                 VStack {
-                    Text("3+4=?")
+                    Text("\(questions[0].firstNumber)+\(questions[0].secondNumber)=?")
                         .font(.system(size: 52, weight: .bold))
                         .foregroundColor(Color.init("DarkText"))
                         .padding(.top, 30)
