@@ -71,8 +71,8 @@ struct Game: View {
                         .cornerRadius(10)
                         .font(.system(size: 24, weight: .bold))
                         .multilineTextAlignment(.center)
-                        .border(Color(red: 236 / 255, green: 244 / 255, blue: 239 / 255), width: 1)
-                        // TODO add shadow
+                        .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.05), radius: 0, x: 0, y: 5)
+                        .border(Color(red: 236 / 255, green: 244 / 255, blue: 239 / 255), width: 1) // TODO Think about making this a custom modifier and apply everywhere the same shadow instead of different one
                     Spacer()
                     BottomButton(text: "Submit", disabled: !canSubmit, onPress: {
                         if self.questions[self.currIndex].firstNumber + self.questions[self.currIndex].secondNumber == Int(self.answer)! {
