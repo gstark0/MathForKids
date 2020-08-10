@@ -60,7 +60,7 @@ struct Game: View {
                     .padding(.top, 80)
                     .padding(.bottom, 30)
                 VStack {
-                    Text("\(questions[0].firstNumber)+\(questions[0].secondNumber)=?")
+                    Text("\(questions[self.currIndex].firstNumber)+\(questions[self.currIndex].secondNumber)=?")
                         .font(.system(size: 52, weight: .bold))
                         .foregroundColor(Color.init("DarkText"))
                         .padding(.top, 30)
@@ -75,7 +75,15 @@ struct Game: View {
                         // TODO add shadow
                     Spacer()
                     BottomButton(text: "Submit", disabled: !canSubmit, onPress: {
-                        
+                        if self.questions[self.currIndex].firstNumber + self.questions[self.currIndex].secondNumber == Int(self.answer)! {
+                            // If the answer is correct
+                            self.correctAnswers += 1
+                        } else {
+                            // If the answer is NOT correct
+                            self.incorrectAnswers += 1
+                        }
+                        self.answer = ""
+                        self.currIndex += 1
                     })
                 }
                 .background(Color("Background").edgesIgnoringSafeArea(.all))
