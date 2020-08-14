@@ -15,6 +15,7 @@ struct Game: View {
     @State private var canSubmit = false
     
     var questions: [Question] = []
+    @Binding var isPlaying: Bool
     @State private var currIndex = 0
     @State private var correctAnswers = 0
     @State private var incorrectAnswers = 0
@@ -75,6 +76,13 @@ struct Game: View {
                         .border(Color(red: 236 / 255, green: 244 / 255, blue: 239 / 255), width: 1) // TODO Think about making this a custom modifier and apply everywhere the same shadow instead of different one
                     Spacer()
                     BottomButton(text: "Submit", disabled: !canSubmit, onPress: {
+                        guard self.currIndex+1 != self.questions.count else {
+                            self.currIndex = 0
+                            self.correctAnswers = 0
+                            self.incorrectAnswers = 0
+                            self.isPlaying = false
+                            return
+                        }
                         if self.questions[self.currIndex].firstNumber + self.questions[self.currIndex].secondNumber == Int(self.answer)! {
                             // If the answer is correct
                             self.correctAnswers += 1
@@ -99,11 +107,5 @@ struct Game: View {
             }
              
         }
-    }
-}
-
-struct Game_Previews: PreviewProvider {
-    static var previews: some View {
-        Game()
     }
 }

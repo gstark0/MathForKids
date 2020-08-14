@@ -20,12 +20,15 @@ struct ContentView: View {
         NavigationView {
             if isPlaying {
                 // While playing
-                Game(questions: questions)
+                Game(questions: questions, isPlaying: $isPlaying)
                     .navigationBarTitle("MathForKids", displayMode: .inline)
             } else {
                 // While showing settings screen
                 Settings(maxRange: $maxRange, numOfQuestions: $numOfQuestions, questions: $questions, isPlaying: $isPlaying)
                     .navigationBarTitle("MathForKids", displayMode: .inline)
+                    .onAppear(perform: {
+                        self.questions = []
+                    })
             }
         }
     }
