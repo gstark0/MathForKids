@@ -27,6 +27,7 @@ struct ContentView: View {
                         self.questions = []
                     }, label: {
                         Image(systemName: "xmark")
+                            .foregroundColor(.gray)
                     }))
             } else {
                 // While showing settings screen
@@ -35,6 +36,12 @@ struct ContentView: View {
                     .onAppear(perform: {
                         self.questions = []
                     })
+                    .navigationBarItems(leading: Button(action: {
+                        self.isPlaying = false
+                        self.questions = []
+                    }, label: {
+                        Image(systemName: "")
+                    }))
             }
         }
     }
