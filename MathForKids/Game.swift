@@ -77,9 +77,6 @@ struct Game: View {
                     Spacer()
                     BottomButton(text: "Submit", disabled: !canSubmit, onPress: {
                         guard self.currIndex+1 != self.questions.count else {
-                            self.currIndex = 0
-                            self.correctAnswers = 0
-                            self.incorrectAnswers = 0
                             self.isPlaying = false
                             return
                         }

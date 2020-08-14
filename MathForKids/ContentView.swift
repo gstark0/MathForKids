@@ -22,6 +22,12 @@ struct ContentView: View {
                 // While playing
                 Game(questions: questions, isPlaying: $isPlaying)
                     .navigationBarTitle("MathForKids", displayMode: .inline)
+                    .navigationBarItems(leading: Button(action: {
+                        self.isPlaying = false
+                        self.questions = []
+                    }, label: {
+                        Image(systemName: "xmark")
+                    }))
             } else {
                 // While showing settings screen
                 Settings(maxRange: $maxRange, numOfQuestions: $numOfQuestions, questions: $questions, isPlaying: $isPlaying)
