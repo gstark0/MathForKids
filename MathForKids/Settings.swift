@@ -15,12 +15,24 @@ struct Settings: View {
     @Binding var questions: [Question]
     @Binding var isPlaying: Bool
     
+    //var questionsType: QuestionType = .addition
+    @State private var questionType = 0
+    
     var body: some View {
         VStack {
             Spacer()
             Avatar(avatar: "pig")
                 .padding(.bottom, 40)
             VStack {
+                Picker(selection: $questionType, label: Text("What do you want to practice?")) {
+                    Image(systemName: "plus").tag(0)
+                    Image(systemName: "minus").tag(1)
+                    Image(systemName: "multiply").tag(2)
+                }
+                    .labelsHidden()
+                    .padding(.horizontal)
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding(.bottom, 10)
                 Stepper(value: $maxRange, in: 2...12) {
                     Text("Range of numbers: \(self.maxRange)")
                 }
