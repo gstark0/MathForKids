@@ -15,6 +15,7 @@ struct Settings: View {
     @Binding var questions: [Question]
     @Binding var isPlaying: Bool
     
+    // Choose question type
     //var questionsType: QuestionType = .addition
     @State private var questionType = 0
     
