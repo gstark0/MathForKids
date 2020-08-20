@@ -24,7 +24,7 @@ struct Settings: View {
             Spacer()
             Avatar(avatar: "pig")
                 .padding(.bottom, 40)
-            VStack {
+            VStack() {
                 Picker(selection: $questionType, label: Text("What do you want to practice?")) {
                     Image(systemName: "plus").tag(0)
                     Image(systemName: "minus").tag(1)
@@ -33,7 +33,8 @@ struct Settings: View {
                     .labelsHidden()
                     .padding(.horizontal)
                     .pickerStyle(SegmentedPickerStyle())
-                    .padding(.bottom, 10)
+                    .padding(.bottom, 30)
+                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.06), radius: 0, x: 0, y: 8)
                 Stepper(value: $maxRange, in: 2...12) {
                     Text("Range of numbers: \(self.maxRange)")
                 }
