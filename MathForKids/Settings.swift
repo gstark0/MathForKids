@@ -36,11 +36,37 @@ struct Settings: View {
                     .padding(.bottom, 30)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.06), radius: 0, x: 0, y: 8)
                 Stepper(value: $maxRange, in: 2...12) {
-                    Text("Range of numbers: \(self.maxRange)")
+                    Text(String(self.maxRange))
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(width: 60, height: 60)
+                        .font(.system(size: 24))
+                        .background(Color(red: 29/255, green: 176/255, blue: 246/255))
+                        .cornerRadius(100)
+                    VStack(alignment: .leading) {
+                        Text("Range of numbers")
+                            .bold()
+                            .padding(.bottom, 5)
+                        Text("Bigger range means bigger numbers")
+                    }
                 }
                     .padding(.horizontal)
+                Divider()
+                    .padding()
                 Stepper(value: $numOfQuestions, in: 4...30) {
-                    Text("Number of questions: \(self.numOfQuestions)")
+                    Text(String(self.numOfQuestions))
+                        .bold()
+                        .foregroundColor(.white)
+                        .frame(width: 60, height: 60)
+                        .font(.system(size: 24))
+                        .background(Color("Basic"))
+                        .cornerRadius(100)
+                    VStack(alignment: .leading) {
+                        Text("Number of questions")
+                            .bold()
+                            .padding(.bottom, 5)
+                        Text("More is more challanging")
+                    }
                 }
                     .padding(.horizontal)
             }
