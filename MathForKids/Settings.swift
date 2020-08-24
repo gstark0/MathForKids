@@ -34,7 +34,6 @@ struct Settings: View {
                     .padding(.horizontal)
                     .pickerStyle(SegmentedPickerStyle())
                     .padding(.bottom, 30)
-                    .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.06), radius: 0, x: 0, y: 8) // Think about this shadow
                 Stepper(value: $maxRange, in: 2...12) {
                     Text(String(self.maxRange))
                         .bold()
