@@ -57,7 +57,10 @@ struct Settings: View {
                     .font(.system(size: 24))
                     .fontWeight(.bold)
                     .foregroundColor(Color("DarkText"))
-                    .padding(.bottom, 40)
+                    .padding(.bottom, 20)
+                Divider()
+                    .padding(.bottom, 20)
+                    .padding(.horizontal)
             }
             VStack() {
                 Picker(selection: $questionType, label: Text("What do you want to practice?")) {
@@ -81,7 +84,7 @@ struct Settings: View {
                         Text("Range of numbers")
                             .bold()
                             .padding(.bottom, 5)
-                        Text("Bigger range means bigger numbers")
+                        Text("Bigger range means bigger numbers and more coins")
                     }
                 }
                     .padding(.horizontal)
@@ -99,7 +102,7 @@ struct Settings: View {
                         Text("Number of questions")
                             .bold()
                             .padding(.bottom, 5)
-                        Text("More is more challanging")
+                        Text("For each question you can earn 10 coins")
                     }
                 }
                     .padding(.horizontal)
