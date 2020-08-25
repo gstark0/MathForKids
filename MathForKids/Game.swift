@@ -42,7 +42,7 @@ struct Game: View {
                             .padding(10)
                             .font(.system(size: 18, weight: .bold))
                             .background(Color("Background"))
-                            .foregroundColor(Color(red: 158 / 255, green: 183 / 255, blue: 167 / 255))
+                            .foregroundColor(Color("DataText"))
                             .cornerRadius(5)
                         Text("\(correctAnswers) good")
                             .padding(10)

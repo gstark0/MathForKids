@@ -22,8 +22,43 @@ struct Settings: View {
     var body: some View {
         VStack {
             Spacer()
-            Avatar(avatar: "pig")
-                .padding(.bottom, 40)
+            VStack {
+                HStack(spacing: 40) {
+                    VStack {
+                        Image(systemName: "dollarsign.circle.fill")
+                            .foregroundColor(Color("DataText"))
+                            .font(.system(size: 24))
+                            .padding(.top, 5)
+                        Text("178")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(Color("DataText"))
+                    }
+                        .frame(width: 70, height: 70)
+                        .background(Color("Background"))
+                        .cornerRadius(8)
+                    
+                    Avatar(avatar: "pig")
+                        .padding(.bottom, 20)
+                    
+                    VStack {
+                        Image(systemName: "hare.fill")
+                            .foregroundColor(Color("DataText"))
+                            .font(.system(size: 24))
+                            .padding(.top, 5)
+                        Text("4/20")
+                            .font(.system(size: 18, weight: .bold))
+                            .foregroundColor(Color("DataText"))
+                    }
+                        .frame(width: 70, height: 70)
+                        .background(Color("Background"))
+                        .cornerRadius(8)
+                }
+                Text("My profile")
+                    .font(.system(size: 24))
+                    .fontWeight(.bold)
+                    .foregroundColor(Color("DarkText"))
+                    .padding(.bottom, 40)
+            }
             VStack() {
                 Picker(selection: $questionType, label: Text("What do you want to practice?")) {
                     Image(systemName: "plus").tag(0)
