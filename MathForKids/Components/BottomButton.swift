@@ -11,6 +11,7 @@ import SwiftUI
 struct BottomButton: View {
     var text: String
     var disabled = false
+    var color = "Basic"
     var onPress: () -> ()
     
     var body: some View {
@@ -21,7 +22,7 @@ struct BottomButton: View {
             .foregroundColor(.white)
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color(disabled ? "DisabledBasic" : "Basic"))
+            .background(Color(disabled ? "DisabledBasic" : color))
             .cornerRadius(5)
             .padding(.horizontal)
             .padding(.bottom, 30)
