@@ -16,7 +16,6 @@ struct Settings: View {
     @Binding var isPlaying: Bool
     
     // Choose question type
-    //var questionsType: QuestionType = .addition
     @State private var questionType = 0
     
     var body: some View {
@@ -25,7 +24,7 @@ struct Settings: View {
             VStack {
                 HStack(spacing: 40) {
                     VStack {
-                        Image(systemName: "dollarsign.circle.fill")
+                        Image(systemName: "star.fill")
                             .foregroundColor(Color("DataText"))
                             .font(.system(size: 24))
                             .padding(.top, 5)
@@ -118,23 +117,48 @@ struct Settings: View {
     // TODO - Generate addition/substraction/multiplication/division questions
     func generateQuestions() {
         for _ in 0..<numOfQuestions {
-            let question = Question(type: .addition, firstNumber: Int.random(in: 1...maxRange), secondNumber: Int.random(in: 1...maxRange))
+            let question = Question(type: questionType, firstNumber: Int.random(in: 1...maxRange), secondNumber: Int.random(in: 1...maxRange))
             questions.append(question)
         }
     }
 }
 
-enum QuestionType {
-    case addition
-    case substruction
-    case multiplication
-    case division
-}
-
 struct Question {
-    var type: QuestionType
+    var type: Int
     var firstNumber: Int
     var secondNumber: Int
+    var correctAnswer: Int {
+        switch self.type {
+        case 0:
+            return self.firstNumber + self.secondNumber
+        case 1:
+            return self.firstNumber - self.secondNumber
+        case 2:
+            return self.firstNumber * self.secondNumber
+        default:
+            return self.firstNumber + self.secondNumber
+        }
+    }
+    var sign: String {
+        switch self.type {
+        case 0:
+            return "+"
+        case 1:
+            return "-"
+        case 2:
+            return "x"
+        default:
+            return "+"
+        }
+    }
+    
+    func isCorrect(answer: Int) -> Bool {
+        if(correctAnswer == answer) {
+            return true
+        } else {
+            return false
+        }
+    }
 }
 
 struct ContentView_Previews: PreviewProvider {

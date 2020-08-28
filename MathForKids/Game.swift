@@ -69,7 +69,7 @@ struct Game: View {
                     .padding(.bottom, 30)
                 
                 VStack {
-                    Text("\(questions[self.currIndex].firstNumber)+\(questions[self.currIndex].secondNumber)=?")
+                    Text("\(questions[self.currIndex].firstNumber)\(questions[self.currIndex].sign)\(questions[self.currIndex].secondNumber)=?")
                         .font(.system(size: 52, weight: .bold))
                         .foregroundColor(Color(textColor))
                         .padding(.top, 30)
@@ -86,7 +86,7 @@ struct Game: View {
                         .border(Color(red: 236 / 255, green: 244 / 255, blue: 239 / 255), width: 1) // TODO Think about making this a custom modifier and apply everywhere the same shadow instead of different one
                     Spacer()
                     if(submitted) {
-                        Text("Correct answer: \(self.questions[self.currIndex].firstNumber + self.questions[self.currIndex].secondNumber)")
+                        Text("Correct answer: \(self.questions[self.currIndex].correctAnswer)")
                             .bold()
                             .font(.system(size: 24))
                             .padding(.vertical)
@@ -94,17 +94,13 @@ struct Game: View {
                     }
                     BottomButton(text: self.buttonText, disabled: !canSubmit, color: buttonColor, onPress: {
                         if(self.submitted) {
-                            guard self.currIndex+1 != self.questions.count else {
-                                self.isPlaying = false
-                                return
-                            }
                             self.nextQuestion()
                         } else {
                             self.submitted = true
                             self.buttonText = "Continue"
                             self.isDisabled = true
                             
-                            if self.questions[self.currIndex].firstNumber + self.questions[self.currIndex].secondNumber == Int(self.answer)! {
+                            if self.questions[self.currIndex].isCorrect(answer: Int(self.answer)!) {
                                 // If the answer is correct
                                 self.correctAnswers += 1
                                 self.isCorrect = true
@@ -134,6 +130,11 @@ struct Game: View {
     }
     
     func nextQuestion() {
+        guard self.currIndex+1 != self.questions.count else {
+            self.isPlaying = false
+            return
+        }
+        
         self.submitted = false
         self.buttonText = "Submit"
         self.answer = ""
